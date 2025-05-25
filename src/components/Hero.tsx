@@ -1,5 +1,5 @@
 
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Instagram, FileText } from 'lucide-react';
 import MinecraftButton from '@/components/MinecraftButton';
 
 const Hero = () => {
@@ -41,6 +41,12 @@ const Hero = () => {
             >
               📫 Send Message
             </MinecraftButton>
+            <MinecraftButton 
+              variant="secondary"
+              onClick={() => window.open('#', '_blank')}
+            >
+              📄 Resume
+            </MinecraftButton>
           </div>
 
           <div className="flex justify-center space-x-6">
@@ -51,6 +57,10 @@ const Hero = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
               <Linkedin size={24} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+               className="text-gray-400 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110">
+              <Instagram size={24} />
             </a>
             <a href="mailto:alex@example.com"
                className="text-gray-400 hover:text-red-400 transition-colors duration-300 transform hover:scale-110">

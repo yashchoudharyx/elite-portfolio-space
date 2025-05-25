@@ -1,35 +1,38 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Full Stack Development",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Vue.js", level: 85 }
+        { name: "React/Next.js", level: "Expert" },
+        { name: "TypeScript", level: "Expert" },
+        { name: "Node.js", level: "Fluent" },
+        { name: "PostgreSQL", level: "Fluent" },
+        { name: "MongoDB", level: "Intermediate" },
+        { name: "Docker", level: "Intermediate" }
       ]
     },
     {
-      title: "Backend Development", 
+      title: "Data Science", 
       skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 82 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 }
+        { name: "Python", level: "Expert" },
+        { name: "SQL", level: "Fluent" },
+        { name: "PowerBI", level: "Fluent" },
+        { name: "VBA", level: "Intermediate" },
+        { name: "Pandas", level: "Intermediate" },
+        { name: "Jupyter", level: "Intermediate" }
       ]
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Docker", level: 78 },
-        { name: "AWS", level: 75 },
-        { name: "Git", level: 95 },
-        { name: "CI/CD", level: 80 }
+        { name: "Git", level: "Expert" },
+        { name: "AWS", level: "Intermediate" },
+        { name: "CI/CD", level: "Intermediate" },
+        { name: "Linux", level: "Fluent" }
       ]
     }
   ];
@@ -37,8 +40,19 @@ const Skills = () => {
   const technologies = [
     "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", 
     "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Tailwind CSS",
-    "Material-UI", "Express.js", "REST APIs", "GraphQL", "Jest", "Cypress"
+    "Material-UI", "Express.js", "REST APIs", "GraphQL", "Jest", "Cypress",
+    "PowerBI", "SQL", "VBA", "Pandas", "Jupyter"
   ];
+
+  const getLevelColor = (level: string) => {
+    switch(level) {
+      case "Expert": return "bg-emerald-500/20 text-emerald-300 border-emerald-500/30";
+      case "Fluent": return "bg-blue-500/20 text-blue-300 border-blue-500/30";
+      case "Intermediate": return "bg-yellow-500/20 text-yellow-300 border-yellow-500/30";
+      case "Beginner": return "bg-gray-500/20 text-gray-300 border-gray-500/30";
+      default: return "bg-gray-500/20 text-gray-300 border-gray-500/30";
+    }
+  };
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-b from-slate-900 to-gray-900">
@@ -59,17 +73,16 @@ const Skills = () => {
                 <CardTitle className="text-white text-xl">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-300 font-medium">{skill.name}</span>
-                        <span className="text-gray-400 text-sm">{skill.level}%</span>
-                      </div>
-                      <Progress 
-                        value={skill.level} 
-                        className="h-2 bg-gray-700"
-                      />
+                    <div key={skillIndex} className="flex justify-between items-center">
+                      <span className="text-gray-300 font-medium">{skill.name}</span>
+                      <Badge 
+                        variant="secondary"
+                        className={`${getLevelColor(skill.level)} text-xs px-2 py-1`}
+                      >
+                        {skill.level}
+                      </Badge>
                     </div>
                   ))}
                 </div>
