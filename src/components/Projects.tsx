@@ -45,15 +45,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-gray-50 to-white relative z-10">
+    <section id="projects" className="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900/50 backdrop-blur-sm relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Featured Quests 🎯
+          <div className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 px-6 py-2 rounded-full font-bold mb-4 border-2 border-cyan-300">
+            POKÉDEX ENTRIES
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
+            Featured Projects 🎯
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Here are some legendary projects that showcase my skills in modern web development. 
-            Each one is a unique adventure crafted with passion! ⚡
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Discover legendary projects that showcase advanced development skills. 
+            Each entry represents a unique digital creature in my portfolio! ⚡
           </p>
         </div>
 
@@ -66,7 +69,7 @@ const Projects = () => {
               type={project.type}
               className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
-              <div className="relative overflow-hidden rounded-lg mb-4">
+              <div className="relative overflow-hidden rounded-lg mb-4 border border-cyan-400/30">
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -80,7 +83,7 @@ const Projects = () => {
                   <Badge 
                     key={techIndex} 
                     variant="secondary" 
-                    className="bg-white/80 text-gray-800 hover:bg-white transition-colors duration-200"
+                    className="bg-slate-800/80 text-cyan-300 hover:bg-slate-700/80 transition-colors duration-200 border border-cyan-400/30"
                   >
                     {tech}
                   </Badge>

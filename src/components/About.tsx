@@ -31,14 +31,17 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white relative z-10">
+    <section id="about" className="py-20 bg-gradient-to-b from-slate-900/50 to-slate-800/50 backdrop-blur-sm relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <div className="inline-block bg-gradient-to-r from-purple-400 to-pink-500 text-slate-900 px-6 py-2 rounded-full font-bold mb-6 border-2 border-purple-300">
+              TRAINER PROFILE
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6">
               About Me 🎮
             </h2>
-            <div className="space-y-6 text-gray-600 leading-relaxed">
+            <div className="space-y-6 text-slate-300 leading-relaxed">
               <p className="text-lg">
                 I'm a passionate full-stack developer with over 5 years of experience 
                 creating modern web applications. Like a skilled Pokemon trainer, I've mastered 
@@ -68,8 +71,8 @@ const About = () => {
                 className="transform hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-white/20 rounded-full backdrop-blur-sm">
-                    <item.icon className="h-6 w-6 text-white" />
+                  <div className="p-3 bg-slate-800/50 rounded-full backdrop-blur-sm border border-cyan-400/30">
+                    <item.icon className="h-6 w-6 text-cyan-300" />
                   </div>
                 </div>
               </PokemonCard>

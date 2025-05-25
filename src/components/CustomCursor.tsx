@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from 'react';
 
-const CustomCursor = () => {
+const CustomCursor = ({ showOnlyOnHome = false }: { showOnlyOnHome?: boolean }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [currentProject, setCurrentProject] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isOnHomePage, setIsOnHomePage] = useState(true);
 
   const projectImages = [
     "https://images.unsplash.com/photo-1551954810-43cd6aef5584", // Minecraft-inspired
@@ -14,8 +15,26 @@ const CustomCursor = () => {
   ];
 
   useEffect(() => {
+    const checkSection = () => {
+      const heroSection = document.getElementById('hero');
+      if (!heroSection) return;
+      
+      const rect = heroSection.getBoundingClientRect();
+      const isInHero = rect.top <= window.innerHeight && rect.bottom >= 0;
+      setIsOnHomePage(isInHero);
+    };
+
     const updateCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      
+      if (showOnlyOnHome) {
+        checkSection();
+        if (!isOnHomePage) {
+          setIsVisible(false);
+          return;
+        }
+      }
+      
       setIsVisible(true);
       
       // Change project image based on movement
@@ -25,16 +44,24 @@ const CustomCursor = () => {
 
     const hideCursor = () => setIsVisible(false);
 
+    const handleScroll = () => {
+      if (showOnlyOnHome) {
+        checkSection();
+      }
+    };
+
     document.addEventListener('mousemove', updateCursor);
     document.addEventListener('mouseleave', hideCursor);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       document.removeEventListener('mousemove', updateCursor);
       document.removeEventListener('mouseleave', hideCursor);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [showOnlyOnHome, isOnHomePage]);
 
-  if (!isVisible) return null;
+  if (!isVisible || (showOnlyOnHome && !isOnHomePage)) return null;
 
   return (
     <div
@@ -49,9 +76,9 @@ const CustomCursor = () => {
         <img
           src={projectImages[currentProject]}
           alt="Project preview"
-          className="w-20 h-20 object-cover rounded-lg border-2 border-purple-400 shadow-lg animate-pulse"
+          className="w-20 h-20 object-cover rounded-lg border-2 border-blue-400 shadow-lg animate-pulse"
         />
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-30"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg blur opacity-30"></div>
       </div>
     </div>
   );
