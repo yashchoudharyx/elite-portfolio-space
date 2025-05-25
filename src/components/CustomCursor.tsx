@@ -1,11 +1,12 @@
 
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const CustomCursor = ({ showOnlyOnHome = false }: { showOnlyOnHome?: boolean }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [currentProject, setCurrentProject] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isOnHomePage, setIsOnHomePage] = useState(true);
+  const location = useLocation();
 
   const projectImages = [
     "https://images.unsplash.com/photo-1551954810-43cd6aef5584", // Minecraft-inspired
@@ -15,24 +16,13 @@ const CustomCursor = ({ showOnlyOnHome = false }: { showOnlyOnHome?: boolean }) 
   ];
 
   useEffect(() => {
-    const checkSection = () => {
-      const heroSection = document.getElementById('hero');
-      if (!heroSection) return;
-      
-      const rect = heroSection.getBoundingClientRect();
-      const isInHero = rect.top <= window.innerHeight && rect.bottom >= 0;
-      setIsOnHomePage(isInHero);
-    };
-
     const updateCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       
-      if (showOnlyOnHome) {
-        checkSection();
-        if (!isOnHomePage) {
-          setIsVisible(false);
-          return;
-        }
+      // Only show cursor on home page when showOnlyOnHome is true
+      if (showOnlyOnHome && location.pathname !== '/') {
+        setIsVisible(false);
+        return;
       }
       
       setIsVisible(true);
@@ -44,24 +34,21 @@ const CustomCursor = ({ showOnlyOnHome = false }: { showOnlyOnHome?: boolean }) 
 
     const hideCursor = () => setIsVisible(false);
 
-    const handleScroll = () => {
-      if (showOnlyOnHome) {
-        checkSection();
-      }
-    };
-
     document.addEventListener('mousemove', updateCursor);
     document.addEventListener('mouseleave', hideCursor);
-    window.addEventListener('scroll', handleScroll);
 
     return () => {
       document.removeEventListener('mousemove', updateCursor);
       document.removeEventListener('mouseleave', hideCursor);
-      window.removeEventListener('scroll', handleScroll);
     };
-  }, [showOnlyOnHome, isOnHomePage]);
+  }, [showOnlyOnHome, location.pathname]);
 
-  if (!isVisible || (showOnlyOnHome && !isOnHomePage)) return null;
+  // Don't render if we should only show on home and we're not on home
+  if (showOnlyOnHome && location.pathname !== '/') {
+    return null;
+  }
+
+  if (!isVisible) return null;
 
   return (
     <div
