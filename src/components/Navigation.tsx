@@ -46,7 +46,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('hero')}
           >
             <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-red-600 rounded-full mr-2 border-2 border-red-400 shadow-lg"></div>
-            Alex.dev
+            yc.dev
           </div>
 
           {/* Desktop Navigation */}

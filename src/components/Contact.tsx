@@ -44,20 +44,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "alex@example.com",
-      href: "mailto:alex@example.com"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "yashchoudhary92a@gmail.com",
+      href: "mailto:yashchoudhary92a@gmail.com"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
-      href: "#"
+      value: "Waterloo, ON",
+      href: "https://www.google.com/maps/dir//200+University+Ave+W,+Waterloo,+ON+N2L+3G1/@43.4722558,-80.6272583,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x882bf6ad02edccff:0xdd9df23996268e17!2m2!1d-80.5448576!2d43.4722854?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
     }
   ];
 
@@ -176,14 +170,14 @@ const Contact = () => {
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-bold mb-2">Let's Work Together</h3>
                 <p className="text-purple-100 mb-4">
-                  I'm always interested in new opportunities and exciting projects.
+                  I'm always interested in new opportunities and exciting projects. 
                 </p>
                 <Button
                   variant="secondary"
                   className="bg-white text-purple-600 hover:bg-gray-100 transition-all duration-300"
                   asChild
                 >
-                  <a href="mailto:alex@example.com">Start a Conversation</a>
+                  <a href="mailto:yashchoudhary92a@gmail.com">Start a Conversation</a>
                 </Button>
               </CardContent>
             </Card>

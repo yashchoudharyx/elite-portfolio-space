@@ -7,41 +7,51 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "🏪 E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built like a trading post in Minecraft!",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "TypeScript"],
-      liveDemo: "https://demo.example.com",
-      github: "https://github.com/username/ecommerce",
-      type: "fire" as const
-    },
-    {
-      title: "📋 Task Management App", 
-      description: "Collaborative task management tool with real-time updates, team collaboration features, and advanced filtering. Organize tasks like a Pokemon trainer's journey!",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
-      technologies: ["React", "Firebase", "Material-UI", "PWA"],
-      liveDemo: "https://demo.example.com",
-      github: "https://github.com/username/taskmanager",
-      type: "water" as const
-    },
-    {
-      title: "🌤️ Weather Dashboard",
-      description: "Beautiful weather application with interactive maps, forecasts, and location-based weather alerts. Predict weather like a true explorer!",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b",
-      technologies: ["Vue.js", "OpenWeather API", "Chart.js", "Tailwind"],
-      liveDemo: "https://demo.example.com",
-      github: "https://github.com/username/weather",
-      type: "electric" as const
-    },
-    {
       title: "💼 Portfolio Website",
       description: "Modern, responsive portfolio website built with React featuring smooth animations and dark mode. Crafted with the precision of a master builder!",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      liveDemo: "https://demo.example.com",
+      liveDemo: "#",
       github: "https://github.com/username/portfolio",
       type: "psychic" as const
-    }
+    },
+    {
+  title: "📊 Trackabyte (Ctrl Hack Del)",
+  description: "A data tracking tool for monitoring habits and metrics over time, built with C++ to practice file I/O, data parsing, and dynamic memory management. Think of it as your personal Pokédex for productivity!",
+  image: "/public/Trackabyte.png",
+  technologies: ["Vue.js", "MongoDB", "Node.js", "OpenAI API" ],
+  liveDemo: "https://devpost.com/software/trackabite",
+  github: "",
+  type: "electric" as const
+},
+   {
+  title: "🎮 Biquadris (Tetris with a Twist) - Academic project",
+  description: "A C++ terminal-based game inspired by Tetris, developed as part of a university course project. Features power-ups, a dual-grid system, and clean object-oriented design—all built without external libraries. Can't be demo'd because of school policy :(",
+  image: "/public/biquadris.png",
+  technologies: ["C++", "OOP", "Terminal UI"],
+  liveDemo: "",
+  github: "",
+  type: "fire" as const
+  },
+  {
+  title: "😂 Make Me Laugh",
+  description: "A fun GDScript-based game where players battle boredom by delivering jokes, built during a game jam with designers and product folks. Fast-paced, quirky, and a total blast to make!",
+  image: "/public/MakeMeLaugh.png",
+  technologies: ["GDScript", "Godot", "Game Jam"],
+  liveDemo: "",
+  github: "https://github.com/username/make-me-laugh",
+  type: "grass" as const
+  },
+    {
+  title: "📚 Bookstore Management System - Academic Project",
+  description: "An academic backend system built using Python and MySQL to simulate real-world bookstore operations. Supports inventory tracking, customer management, and sales—all through a structured, menu-driven interface. Can't be demo'd because of school policy :(",
+  image: "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+  technologies: ["Python", "MySQL"],
+  liveDemo: "",
+  github: "",
+  type: "water" as const
+  }
+    
   ];
 
   return (

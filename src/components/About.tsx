@@ -43,22 +43,14 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-slate-300 leading-relaxed">
               <p className="text-lg">
-                I'm a passionate full-stack developer with over 5 years of experience 
-                creating modern web applications. Like a skilled Pokemon trainer, I've mastered 
-                React, Node.js, and cloud technologies, with a strong focus on user experience and performance.
+                Hi! I’m Yash Choudhary, a software developer with a love for building thoughtful, user-focused digital experiences. I’m currently studying Computational Mathematics at the University of Waterloo, where I’m diving deep into software development, data science, and the fascinating world of AI and machine learning. I enjoy working on full-stack projects, especially ones that challenge me to blend creativity with logic.
               </p>
               <p className="text-lg">
-                My journey in web development started with a curiosity about how things work 
-                on the internet - much like exploring the digital world of Minecraft! Since then, 
-                I've had the privilege of working with startups, agencies, and large corporations, 
-                helping them craft their digital adventures.
-              </p>
+                Outside of code, I’m big on staying active—I lift weights, hike whenever I can, and never say no to a good night walk or a spontaneous beach visit. I’m also someone who loves being around people, whether that’s a laid-back get-together or a night out dancing. Fashion is another big part of who I am—there’s something about finding your own style that feels just as creative as writing code.              </p>
               <p className="text-lg">
-                When I'm not coding, you'll find me exploring new technologies, contributing 
-                to open-source projects, or sharing knowledge with the developer community 
-                through blog posts and mentoring. Always ready for the next challenge! ⚡
-              </p>
-            </div>
+                I grew up loving Pokémon, and it still holds a nostalgic place in my heart, which is why it became the theme for this portfolio. To me, learning new technologies and leveling up my skills is kind of like training: a journey of growth, curiosity, and fun. Thanks for stopping by—feel free to explore and reach out if you want to connect!            
+                </p>
+                </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

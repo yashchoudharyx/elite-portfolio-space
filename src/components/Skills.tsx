@@ -7,40 +7,38 @@ const Skills = () => {
     {
       title: "Full Stack Development",
       skills: [
-        { name: "React/Next.js", level: "Expert" },
-        { name: "TypeScript", level: "Expert" },
-        { name: "Node.js", level: "Fluent" },
-        { name: "PostgreSQL", level: "Fluent" },
-        { name: "MongoDB", level: "Intermediate" },
-        { name: "Docker", level: "Intermediate" }
+        { name: "React.js", level: "Intermediate" },
+        { name: "Node.js", level: "Intermediate" },
+        { name: "MySQL", level: "Expert" },
+        { name: "MongoDB", level: "Intermediate" }
       ]
     },
     {
       title: "Data Science", 
       skills: [
         { name: "Python", level: "Expert" },
-        { name: "SQL", level: "Fluent" },
+        { name: "SQL", level: "Expert" },
         { name: "PowerBI", level: "Fluent" },
-        { name: "VBA", level: "Intermediate" },
-        { name: "Pandas", level: "Intermediate" },
-        { name: "Jupyter", level: "Intermediate" }
+        { name: "VBA", level: "Fluent" },
+        { name: "Pandas", level: "Beginner" },
+        { name: "Jupyter", level: "Beginner" },
+        { name: "R", level: "Beginner"}
       ]
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Git", level: "Expert" },
-        { name: "AWS", level: "Intermediate" },
-        { name: "CI/CD", level: "Intermediate" },
+        { name: "Git", level: "Fluent" },
+        { name: "AWS", level: "Beginner" },
+        { name: "CI/CD", level: "Beginner" },
         { name: "Linux", level: "Fluent" }
       ]
     }
   ];
 
   const technologies = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", 
-    "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Tailwind CSS",
-    "Material-UI", "Express.js", "REST APIs", "GraphQL", "Jest", "Cypress",
+    "JavaScript", "React", "Vue.js", "Node.js", 
+    "Python", "C++","MySQL", "MongoDB", "AWS", "Git", "Tailwind CSS",
     "PowerBI", "SQL", "VBA", "Pandas", "Jupyter"
   ];
 

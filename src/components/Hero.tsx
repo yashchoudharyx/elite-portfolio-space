@@ -22,13 +22,12 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             <span className="block">Hi, I'm</span>
             <span className="bg-gradient-to-r from-green-400 via-blue-400 to-red-400 bg-clip-text text-transparent">
-              Alex Developer
+              Yash Choudhary
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Full-Stack Developer crafting epic digital adventures with modern technologies.
-            Ready to catch 'em all and build something legendary! 🎮⚡
+            Studying Math and Statistics at Waterloo. 🎮⚡
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -50,19 +49,19 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center space-x-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/yashchoudharyx" target="_blank" rel="noopener noreferrer" 
                className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/yash-choudhary-bb793a298" target="_blank" rel="noopener noreferrer"
                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
               <Linkedin size={24} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/yc.mov/" target="_blank" rel="noopener noreferrer"
                className="text-gray-400 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110">
               <Instagram size={24} />
             </a>
-            <a href="mailto:alex@example.com"
+            <a href="mailto:yashchoudhary92a@gmail.com"
                className="text-gray-400 hover:text-red-400 transition-colors duration-300 transform hover:scale-110">
               <Mail size={24} />
             </a>
