@@ -16,42 +16,41 @@ const Projects = () => {
       type: "psychic" as const
     },
     {
-  title: "📊 Trackabyte (Ctrl Hack Del)",
-  description: "A data tracking tool for monitoring habits and metrics over time, built with C++ to practice file I/O, data parsing, and dynamic memory management. Think of it as your personal Pokédex for productivity!",
-  image: "/public/Trackabyte.png",
-  technologies: ["Vue.js", "MongoDB", "Node.js", "OpenAI API" ],
-  liveDemo: "https://devpost.com/software/trackabite",
-  github: "",
-  type: "electric" as const
-},
-   {
-  title: "🎮 Biquadris (Tetris with a Twist) - Academic project",
-  description: "A C++ terminal-based game inspired by Tetris, developed as part of a university course project. Features power-ups, a dual-grid system, and clean object-oriented design—all built without external libraries. Can't be demo'd because of school policy :(",
-  image: "/public/biquadris.png",
-  technologies: ["C++", "OOP", "Terminal UI"],
-  liveDemo: "",
-  github: "",
-  type: "fire" as const
-  },
-  {
-  title: "😂 Make Me Laugh",
-  description: "A fun GDScript-based game where players battle boredom by delivering jokes, built during a game jam with designers and product folks. Fast-paced, quirky, and a total blast to make!",
-  image: "/public/MakeMeLaugh.png",
-  technologies: ["GDScript", "Godot", "Game Jam"],
-  liveDemo: "",
-  github: "https://github.com/username/make-me-laugh",
-  type: "grass" as const
-  },
+      title: "📊 Trackabyte (Ctrl Hack Del)",
+      description: "A data tracking tool for monitoring habits and metrics over time, built with C++ to practice file I/O, data parsing, and dynamic memory management. Think of it as your personal Pokédex for productivity!",
+      image: "/lovable-uploads/ba59423c-9e25-4359-b58c-f8de1ea1f258.png",
+      technologies: ["Vue.js", "MongoDB", "Node.js", "OpenAI API" ],
+      liveDemo: "https://devpost.com/software/trackabite",
+      github: "",
+      type: "electric" as const
+    },
     {
-  title: "📚 Bookstore Management System - Academic Project",
-  description: "An academic backend system built using Python and MySQL to simulate real-world bookstore operations. Supports inventory tracking, customer management, and sales—all through a structured, menu-driven interface. Can't be demo'd because of school policy :(",
-  image: "https://images.unsplash.com/photo-1512820790803-83ca734da794",
-  technologies: ["Python", "MySQL"],
-  liveDemo: "",
-  github: "",
-  type: "water" as const
-  }
-    
+      title: "🎮 Biquadris (Tetris with a Twist) - Academic project",
+      description: "A C++ terminal-based game inspired by Tetris, developed as part of a university course project. Features power-ups, a dual-grid system, and clean object-oriented design—all built without external libraries. Can't be demo'd because of school policy :(",
+      image: "/lovable-uploads/5cbf5df9-beba-40f4-a0b3-4d370df45ca5.png",
+      technologies: ["C++", "OOP", "Terminal UI"],
+      liveDemo: "",
+      github: "",
+      type: "fire" as const
+    },
+    {
+      title: "😂 Make Me Laugh",
+      description: "A fun GDScript-based game where players battle boredom by delivering jokes, built during a game jam with designers and product folks. Fast-paced, quirky, and a total blast to make!",
+      image: "/lovable-uploads/4229a242-bd21-4708-a4f8-b263130cd535.png",
+      technologies: ["GDScript", "Godot", "Game Jam"],
+      liveDemo: "",
+      github: "https://github.com/username/make-me-laugh",
+      type: "grass" as const
+    },
+    {
+      title: "📚 Bookstore Management System - Academic Project",
+      description: "An academic backend system built using Python and MySQL to simulate real-world bookstore operations. Supports inventory tracking, customer management, and sales—all through a structured, menu-driven interface. Can't be demo'd because of school policy :(",
+      image: "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+      technologies: ["Python", "MySQL"],
+      liveDemo: "",
+      github: "",
+      type: "water" as const
+    }
   ];
 
   return (

@@ -23,16 +23,16 @@ const MovingBackground = () => {
       color: string;
     }> = [];
 
-    // Create particles with Minecraft/Pokemon inspired colors
-    const colors = ['#4CAF50', '#2196F3', '#FF9800', '#E91E63', '#9C27B0', '#00BCD4'];
+    // Create particles with darker, more subtle colors
+    const colors = ['#1e293b', '#334155', '#475569', '#64748b', '#0f172a', '#1e1b4b'];
     
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 2 + 0.5,
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
@@ -53,19 +53,19 @@ const MovingBackground = () => {
         ctx.fill();
       });
 
-      // Draw connections
+      // Draw subtle connections
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach(otherParticle => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 80) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(100, 116, 139, ${0.1 * (1 - distance / 80)})`;
+            ctx.lineWidth = 0.3;
             ctx.stroke();
           }
         });
@@ -88,7 +88,7 @@ const MovingBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-30"
+      className="fixed inset-0 pointer-events-none opacity-60"
       style={{ zIndex: 1 }}
     />
   );
