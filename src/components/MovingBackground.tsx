@@ -26,18 +26,21 @@ const MovingBackground = () => {
       size: number;
       opacity: number;
       baseOpacity: number;
+      color: string;
     }> = [];
 
-    // Create particles
-    for (let i = 0; i < 100; i++) {
+    // Create particles with more vibrant colors
+    const colors = ['#60a5fa', '#34d399', '#f472b6', '#fbbf24', '#a78bfa'];
+    for (let i = 0; i < 80; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        size: Math.random() * 3 + 1,
-        opacity: 0.3,
-        baseOpacity: Math.random() * 0.5 + 0.3
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5,
+        size: Math.random() * 4 + 2,
+        opacity: 0.6,
+        baseOpacity: Math.random() * 0.4 + 0.4,
+        color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
 
@@ -45,11 +48,10 @@ const MovingBackground = () => {
     let time = 0;
 
     const animate = () => {
-      time += 0.01;
+      time += 0.02;
       
-      // Clear canvas with dark background
-      ctx.fillStyle = '#0f172a';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear canvas completely
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Update and draw particles
       particles.forEach((particle, i) => {
@@ -64,15 +66,21 @@ const MovingBackground = () => {
         if (particle.y > canvas.height) particle.y = 0;
 
         // Animate opacity
-        particle.opacity = particle.baseOpacity + Math.sin(time + i * 0.1) * 0.2;
+        particle.opacity = particle.baseOpacity + Math.sin(time + i * 0.1) * 0.3;
 
-        // Draw particle
+        // Draw particle with glow effect
         ctx.save();
         ctx.globalAlpha = particle.opacity;
+        
+        // Create glow effect
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 15;
+        
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = '#3b82f6';
+        ctx.fillStyle = particle.color;
         ctx.fill();
+        
         ctx.restore();
       });
 
@@ -83,16 +91,16 @@ const MovingBackground = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
-            const opacity = (1 - distance / 120) * 0.3;
+          if (distance < 150) {
+            const opacity = (1 - distance / 150) * 0.4;
             
             ctx.save();
             ctx.globalAlpha = opacity;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = '#3b82f6';
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = '#60a5fa';
+            ctx.lineWidth = 1.5;
             ctx.stroke();
             ctx.restore();
           }
@@ -101,18 +109,18 @@ const MovingBackground = () => {
 
       // Add flowing waves
       ctx.save();
-      ctx.globalAlpha = 0.1;
+      ctx.globalAlpha = 0.2;
       for (let i = 0; i < 3; i++) {
         ctx.beginPath();
-        ctx.moveTo(0, canvas.height / 2 + Math.sin(time + i) * 50);
+        ctx.moveTo(0, canvas.height / 2 + Math.sin(time + i) * 80);
         
-        for (let x = 0; x <= canvas.width; x += 10) {
-          const y = canvas.height / 2 + Math.sin((x * 0.01) + time + i) * 50;
+        for (let x = 0; x <= canvas.width; x += 20) {
+          const y = canvas.height / 2 + Math.sin((x * 0.008) + time + i * 2) * 80;
           ctx.lineTo(x, y);
         }
         
-        ctx.strokeStyle = '#3b82f6';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = colors[i % colors.length];
+        ctx.lineWidth = 3;
         ctx.stroke();
       }
       ctx.restore();
@@ -140,7 +148,10 @@ const MovingBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      style={{ 
+        zIndex: 2,
+        background: 'transparent'
+      }}
     />
   );
 };
