@@ -61,7 +61,7 @@ const PokemonCard = ({ title, description, children, type = 'normal', className 
         <CardTitle className="text-xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
           {title}
         </CardTitle>
-        <CardDescription className="text-slate-300">
+        <CardDescription className="text-slate-900 font-medium">
           {description}
         </CardDescription>
       </CardHeader>

@@ -43,10 +43,10 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-slate-300 leading-relaxed">
               <p className="text-lg">
-                Hi! I’m Yash Choudhary, a software developer with a love for building thoughtful, user-focused digital experiences. I’m currently studying Computational Mathematics at the University of Waterloo, where I’m diving deep into software development, data science, and the fascinating world of AI and machine learning. I enjoy working on full-stack projects, especially ones that challenge me to blend creativity with logic.
+                Hi! I'm Yash Choudhary, a software developer with a love for building thoughtful, user-focused digital experiences. I'm currently studying Computational Mathematics at the University of Waterloo, where I'm diving deep into software development, data science, and the fascinating world of AI and machine learning. I enjoy working on full-stack projects, especially ones that challenge me to blend creativity with logic.
               </p>
               <p className="text-lg">
-                Outside of code, I’m big on staying active—I lift weights, hike whenever I can, and never say no to a good night walk or a spontaneous beach visit. I’m also someone who loves being around people, whether that’s a laid-back get-together or a night out dancing. Fashion is another big part of who I am—there’s something about finding your own style that feels just as creative as writing code.              </p>
+                Outside of code, I'm big on staying active—I lift weights, hike whenever I can, and never say no to a good night walk or a spontaneous beach visit. I'm also someone who loves being around people, whether that's a laid-back get-together or a night out dancing. Fashion is another big part of who I am—there's something about finding your own style that feels just as creative as writing code.              </p>
               <p className="text-lg">
                 I grew up loving Pokémon, and it still holds a nostalgic place in my heart, which is why it became the theme for this portfolio. To me, learning new technologies and leveling up my skills is kind of like training: a journey of growth, curiosity, and fun. Thanks for stopping by—feel free to explore and reach out if you want to connect!            
                 </p>

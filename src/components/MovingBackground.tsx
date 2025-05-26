@@ -21,24 +21,35 @@ const MovingBackground = () => {
       vy: number;
       size: number;
       color: string;
+      opacity: number;
     }> = [];
 
-    // Create particles with darker, more subtle colors
-    const colors = ['#1e293b', '#334155', '#475569', '#64748b', '#0f172a', '#1e1b4b'];
+    // Darker colors for a more dramatic effect
+    const colors = ['#0f1419', '#1a1f2e', '#0d1117', '#161b22', '#21262d', '#010409'];
     
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 60; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 3 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        opacity: Math.random() * 0.3 + 0.1
       });
     }
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Create gradient background
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, '#0a0e1a');
+      gradient.addColorStop(0.5, '#1a1f2e');
+      gradient.addColorStop(1, '#0f1419');
+      
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       particles.forEach(particle => {
         particle.x += particle.vx;
@@ -50,22 +61,24 @@ const MovingBackground = () => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity;
         ctx.fill();
+        ctx.globalAlpha = 1;
       });
 
-      // Draw subtle connections
+      // Draw moving connections with darker lines
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach(otherParticle => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 80) {
+          if (distance < 100) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(100, 116, 139, ${0.1 * (1 - distance / 80)})`;
-            ctx.lineWidth = 0.3;
+            ctx.strokeStyle = `rgba(30, 41, 59, ${0.2 * (1 - distance / 100)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         });
@@ -88,7 +101,7 @@ const MovingBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-60"
+      className="fixed inset-0 pointer-events-none opacity-80"
       style={{ zIndex: 1 }}
     />
   );
