@@ -1,3 +1,4 @@
+
 import { ArrowDown, Github, Linkedin, Mail, Instagram, FileText } from 'lucide-react';
 import MinecraftButton from '@/components/MinecraftButton';
 import ScrollDilutionEffect from '@/components/ScrollDilutionEffect';
@@ -39,46 +40,52 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <MinecraftButton onClick={() => scrollToSection('projects')}>
-                🎯 View My Quests
-              </MinecraftButton>
-              <MinecraftButton 
-                variant="secondary"
-                onClick={() => scrollToSection('contact')}
-              >
-                📫 Send Message
-              </MinecraftButton>
-              <MinecraftButton 
-                variant="secondary"
-                onClick={() => window.open('#', '_blank')}
-              >
-                📄 Resume
-              </MinecraftButton>
+              <div className="cursor-pointer">
+                <MinecraftButton onClick={() => scrollToSection('projects')}>
+                  🎯 View My Quests
+                </MinecraftButton>
+              </div>
+              <div className="cursor-pointer">
+                <MinecraftButton 
+                  variant="secondary"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  📫 Send Message
+                </MinecraftButton>
+              </div>
+              <div className="cursor-pointer">
+                <MinecraftButton 
+                  variant="secondary"
+                  onClick={() => window.open('#', '_blank')}
+                >
+                  📄 Resume
+                </MinecraftButton>
+              </div>
             </div>
 
             <div className="flex justify-center space-x-6">
               <a href="https://github.com/yashchoudharyx" target="_blank" rel="noopener noreferrer" 
-                 className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110">
+                 className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110 cursor-pointer">
                 <Github size={24} />
               </a>
               <a href="https://www.linkedin.com/in/yash-choudhary-bb793a298" target="_blank" rel="noopener noreferrer"
-                 className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
+                 className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 cursor-pointer">
                 <Linkedin size={24} />
               </a>
               <a href="https://www.instagram.com/yc.mov/" target="_blank" rel="noopener noreferrer"
-                 className="text-gray-400 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110">
+                 className="text-gray-400 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110 cursor-pointer">
                 <Instagram size={24} />
               </a>
               <a href="mailto:yashchoudhary92a@gmail.com"
-                 className="text-gray-400 hover:text-red-400 transition-colors duration-300 transform hover:scale-110">
+                 className="text-gray-400 hover:text-red-400 transition-colors duration-300 transform hover:scale-110 cursor-pointer">
                 <Mail size={24} />
               </a>
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer">
             <ArrowDown 
-              className="text-gray-400 cursor-pointer hover:text-green-400 transition-colors duration-300" 
+              className="text-gray-400 hover:text-green-400 transition-colors duration-300" 
               size={32}
               onClick={() => scrollToSection('about')}
             />
