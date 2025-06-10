@@ -1,3 +1,4 @@
+
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -41,7 +42,7 @@ const Index = () => {
       <footer className="bg-slate-900/90 backdrop-blur-sm text-cyan-100 py-8 relative z-10 border-t-2 border-cyan-400/30">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-slate-300">
-            © 2024 Alex Developer | Pokédex Portfolio v2.0 | Built with React, TypeScript & Tailwind CSS ⚡
+            © 2024 yc.dev | Pokédex Portfolio v2.0 | Built with React, TypeScript & Tailwind CSS ⚡
           </p>
         </div>
       </footer>
